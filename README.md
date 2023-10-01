@@ -1,3 +1,3 @@
 # Portfolio-me
 
-portfolio currntly updating
+Simple personal portfolio!
