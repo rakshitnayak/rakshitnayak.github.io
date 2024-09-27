@@ -2,13 +2,6 @@
   position: relative;
 }
 
-.animated-info {
-  display: inline-block;
-  vertical-align: top;
-  min-width: 400px;
-  position: relative;
-}
-
 .animated-item {
   color: #ffc200;
 }
