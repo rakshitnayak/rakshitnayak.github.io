@@ -12,7 +12,6 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  userScalable: false,
 };
 
 export default function RootLayout({
@@ -23,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="max-w-[1280px] m-auto">
+        <div className="max-w-[768px] m-auto">
           {/* <Header /> */}
           {children}
         </div>

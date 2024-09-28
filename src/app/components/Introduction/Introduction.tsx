@@ -7,7 +7,7 @@ import Button from "../Button/Button";
 
 function Introduction() {
   return (
-    <div className="md:flex md:justify-center md:items-center md:mt-[80px] xl:mx-auto md:m-[32px] m-[16px]">
+    <div className="md:flex md:justify-center md:items-center md:mt-[80px] xl:mx-auto md:m-[32px] m-[16px] gap-10">
       <div className="md:w-[80%]">
         <h1 className="md:text-[2.8em] font-bold text-[1.8em] animated animated-text">
           <span className="mr-2">Hey folks, I'm</span>
@@ -17,7 +17,7 @@ function Introduction() {
             <span className="animated-item">Cricket aficionado</span>
           </div>
         </h1>
-        <p className="text-[18px] text-stone-500 font-light mt-12 md:mt-5">
+        <p className="text-[18px] text-white md:text-stone-500 font-light mt-12 md:mt-5">
           Building a successful product is a challenge. I’m skilled in creating
           & scaling efficient Full stack applications. I’ve always demonstrated
           the capacity to design lively and compelling consumer experiences
