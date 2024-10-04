@@ -17,7 +17,7 @@ function Introduction() {
             <span className="animated-item">Cricket aficionado</span>
           </div>
         </h1>
-        <p className="text-[18px] text-white md:text-stone-500 font-light mt-12 md:mt-5">
+        <p className="text-[18px] dark:text-white text-stone-500 font-light mt-12 md:mt-5">
           Building a successful product is a challenge. I’m skilled in creating
           & scaling efficient Full stack applications. I’ve always demonstrated
           the capacity to design lively and compelling consumer experiences
