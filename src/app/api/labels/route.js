@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 import dbConnect from "../../../lib/dbconnect";
-import label from "../../../models/temp";
+import label from "../../../models/labels";
 
 export async function GET() {
   await dbConnect();
