@@ -8,7 +8,14 @@ export async function GET() {
 
   try {
     const labels = await label.find({});
-    return NextResponse.json({ success: true, data: labels });
+    return NextResponse.json(
+      { success: true, data: labels },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
   } catch (error) {
     return NextResponse.json(
       { success: false, error: "Failed to fetch labels" },
