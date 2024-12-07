@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MONGODB_URI: ${{ secrets.MONGODB_URI }} # Use GitHub secrets for sensitive data
-      NEXT_PUBLIC_BASE_API_UR: ${{ secrets.NEXT_PUBLIC_BASE_API_URL }} # Use GitHub secrets for sensitive data
+      NEXT_PUBLIC_BASE_API_URL: ${{ secrets.NEXT_PUBLIC_BASE_API_URL }} # Use GitHub secrets for sensitive data
     steps:
       - name: Checkout
         uses: actions/checkout@v4
