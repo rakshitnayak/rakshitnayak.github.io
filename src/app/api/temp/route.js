@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
 
 import dbConnect from "../../../lib/dbconnect";
-import Label from "../../../models/Labels";
+import label from "../../../models/temp";
 
 export async function GET() {
   await dbConnect();
 
   try {
-    const labels = await Label.find({});
+    const labels = await label.find({});
     return NextResponse.json({ success: true, data: labels });
   } catch (error) {
     return NextResponse.json(
