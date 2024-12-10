@@ -11,7 +11,9 @@ export default function Home() {
   useEffect(() => {
     const fetchLabels = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/labels`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/labels`,{
+          next: { revalidate: 60 },
+        });
         const labels = await response.json();
 
         if (labels.success) {
