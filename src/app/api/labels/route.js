@@ -13,7 +13,7 @@ export async function GET() {
       {
         headers: {
           "Content-Type": "application/json",
-          "Cache-Control": "no-store",
+          "Cache-Control": "no-store, must-revalidate",
         },
       }
     );
