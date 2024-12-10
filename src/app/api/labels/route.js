@@ -12,8 +12,9 @@ export async function GET() {
       { success: true, data: labels },
       {
         headers: {
-          "Content-Type": "application/json",
           "Cache-Control": "no-store, must-revalidate",
+          "CDN-Cache-Control": "public, s-maxage=60",
+          "Vercel-CDN-Cache-Control": "public, s-maxage=60",
         },
       }
     );
