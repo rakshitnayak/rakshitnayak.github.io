@@ -8,12 +8,16 @@ import Button from "../Button/Button";
 type Labels = {
   description: string;
 };
+type Configs = {
+  resumeLink: string;
+};
 
 type IntroductionProps = {
   labels: Labels;
+  configs: Configs;
 };
 
-function Introduction({ labels }: IntroductionProps) {
+function Introduction({ labels, configs }: IntroductionProps) {
   return (
     <div className="md:flex md:justify-center md:items-center md:mt-[80px] xl:mx-auto md:m-[32px] m-[16px] gap-10">
       <div className="md:w-[80%]">
@@ -28,7 +32,7 @@ function Introduction({ labels }: IntroductionProps) {
         <p className="text-[18px] dark:text-white text-stone-500 font-light mt-12 md:mt-5">
           {labels.description}
         </p>
-        <Button />
+        <Button link={configs.resumeLink} />
       </div>
       <div className="max-md:mt-20">
         <Image
