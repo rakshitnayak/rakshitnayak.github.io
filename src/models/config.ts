@@ -4,11 +4,11 @@ export interface configs extends mongoose.Document {
   resumeLink: string;
 }
 
-const configsSchema = new mongoose.Schema<configs>({
+const configschema = new mongoose.Schema<configs>({
   resumeLink: {
     type: String,
   },
 });
 
-export default mongoose.models.configs ||
-  mongoose.model<configs>("config", configsSchema);
+export default mongoose.models.config ||
+  mongoose.model<configs>("config", configschema);

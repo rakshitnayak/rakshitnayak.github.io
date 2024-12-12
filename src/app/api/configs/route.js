@@ -12,7 +12,6 @@ export async function GET() {
     const headers = {
       "Cache-Control": "no-store, must-revalidate",
     };
-
     return NextResponse.json({ success: true, data: configs }, { headers });
   } catch (error) {
     return NextResponse.json(
