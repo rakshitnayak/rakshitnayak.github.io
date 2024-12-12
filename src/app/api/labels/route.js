@@ -8,16 +8,12 @@ export async function GET() {
 
   try {
     const labels = await label.find({});
-    return NextResponse.json(
-      { success: true, data: labels },
-      {
-        headers: {
-          "Cache-Control": "no-store, must-revalidate",
-          "CDN-Cache-Control": "public, s-maxage=60",
-          "Vercel-CDN-Cache-Control": "public, s-maxage=60",
-        },
-      }
-    );
+
+    const headers = {
+      "Cache-Control": "no-store, must-revalidate",
+    };
+
+    return NextResponse.json({ success: true, data: labels }, { headers });
   } catch (error) {
     return NextResponse.json(
       { success: false, error: "Failed to fetch labels" },
