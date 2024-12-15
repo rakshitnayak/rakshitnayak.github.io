@@ -1,5 +1,22 @@
-# Portfolio-me
+# Simple personal portfolio!
 
-Simple personal portfolio!
+## One-time setup
 
-https://rakshitnayak.github.io/
+- Install Modules
+
+```shell
+npm install
+```
+
+- Create `.env` file
+
+```shell
+cp .env.default .env
+# Adjust API_KEY in .env
+```
+
+- Bring up the UI server on port
+
+```shell
+npm run dev
+```

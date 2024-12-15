@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
 
 import dbConnect from "../../../lib/dbconnect";
-import label from "../../../models/labels";
+import { LabelModel } from "@/lib/models";
 
 export async function GET() {
   await dbConnect();
 
   try {
-    const labels = await label.find({});
+    const labels = await LabelModel.find({});
 
     const headers = {
       "Cache-Control": "no-store, must-revalidate",

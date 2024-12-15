@@ -40,6 +40,7 @@ function Introduction({ labels, configs }: IntroductionProps) {
           width={400}
           height={400}
           alt="rakshit-coding"
+          priority
         />
       </div>
     </div>

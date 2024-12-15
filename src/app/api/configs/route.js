@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
 
 import dbConnect from "../../../lib/dbconnect";
-import config from "../../../models/config";
+import { ConfigModel } from "@/lib/models";
 
 export async function GET() {
   await dbConnect();
 
   try {
-    const configs = await config.find({});
+    const configs = await ConfigModel.find({});
 
     const headers = {
       "Cache-Control": "no-store, must-revalidate",
