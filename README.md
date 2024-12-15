@@ -12,7 +12,7 @@ npm install
 
 ```shell
 cp .env.default .env
-# Adjust API_KEY in .env
+# Adjust MONGODB URL in .env
 ```
 
 - Bring up the UI server on port
