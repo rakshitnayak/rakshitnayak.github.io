@@ -27,7 +27,7 @@ function Header({ socials }: HeaderProps) {
         </a>
       </div>
       <nav className="flex gap-4 items-center">
-        {socials.map((social) => (
+        {socials?.map((social) => (
           <Link href={social.link} key={social.name}>
             <Icon fontSize="20px">{mapIcons[social.name as keyof typeof mapIcons]}</Icon>
           </Link>
@@ -36,5 +36,9 @@ function Header({ socials }: HeaderProps) {
     </div>
   );
 }
+
+Header.defaultProps = {
+  socials: [],
+};
 
 export default Header;
