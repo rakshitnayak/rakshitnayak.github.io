@@ -1,36 +1,37 @@
-import { Social } from "@/types";
-import mongoose from "mongoose";
+import { About, Social } from "@/types";
+import mongoose, { Schema, Document } from "mongoose";
 
-export interface Labels extends mongoose.Document {
+export interface Labels extends Document {
   description: string;
 }
 
-export interface Configs extends mongoose.Document {
+export interface Configs extends Document {
   resumeLink: string;
   socials: Social[];
+  about: About[];
 }
 
-const configSchema = new mongoose.Schema<Configs>({
-  resumeLink: {
-    type: String,
-  },
+const configSchema = new Schema<Configs>({
+  resumeLink: { type: String, required: true },
   socials: [
     {
-      name: {
-        type: String,
-        required: true,
-      },
-      link: {
-        type: String,
-        required: true,
-      },
+      name: { type: String, required: true },
+      link: { type: String, required: true },
+    },
+  ],
+  about: [
+    {
+      list: { type: String, required: true },
+      linkWord: { type: String },
+      link: { type: String },
     },
   ],
 });
 
-const labelSchema = new mongoose.Schema<Labels>({
+const labelSchema = new Schema<Labels>({
   description: {
     type: String,
+    required: true,
   },
 });
 
