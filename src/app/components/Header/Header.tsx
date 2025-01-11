@@ -4,11 +4,16 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import Link from "../Link/Link";
 import { Social } from "@/types";
 
-type HeaderProps = {
+
+type Configs = {
   socials: Social[];
 };
 
-function Header({ socials }: HeaderProps) {
+type HeaderProps = {
+  configs: Configs;
+};
+
+function Header({ configs }: HeaderProps) {
   const mapIcons = {
     github: <FaGithub />,
     linkedIn: <FaLinkedin />,
@@ -26,8 +31,8 @@ function Header({ socials }: HeaderProps) {
         </a>
       </div>
       <nav className="flex gap-4 items-center">
-        {socials && socials.length > 0 && (
-          socials.map((social) => (
+        {configs.socials && configs.socials.length > 0 && (
+          configs.socials.map((social) => (
             <Link href={social.link} key={social.name}>
               <Icon fontSize="20px">
                 {mapIcons[social.name as keyof typeof mapIcons]}
