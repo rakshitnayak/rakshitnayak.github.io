@@ -17,7 +17,7 @@ type IntroductionProps = {
   configs: Configs;
 };
 
-function Introduction({ labels, configs }: IntroductionProps) {
+function Introduction({ labels }: IntroductionProps) {
   return (
     <div className="md:flex md:justify-center md:items-center md:mt-[80px] xl:mx-auto md:m-[32px] m-[16px] gap-10">
       <div className="md:w-[80%]">

@@ -7,7 +7,7 @@ export interface Labels extends mongoose.Document {
 
 export interface Configs extends mongoose.Document {
   resumeLink: string;
-  socials: Social;
+  socials: Social[];
 }
 
 const configSchema = new mongoose.Schema<Configs>({

@@ -26,7 +26,7 @@ function Header({ socials }: HeaderProps) {
         </a>
       </div>
       <nav className="flex gap-4 items-center">
-        {socials.length > 0 && (
+        {socials && socials.length > 0 && (
           socials.map((social) => (
             <Link href={social.link} key={social.name}>
               <Icon fontSize="20px">
