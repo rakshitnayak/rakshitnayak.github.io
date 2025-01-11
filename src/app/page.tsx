@@ -23,7 +23,7 @@ export default async function Home() {
 
   return (
     <>
-      <Header socials={configs.socials}/>
+      <Header socials={configs?.socials}/>
       <Introduction labels={labels} configs={configs} />
       <About configs={configs}/>
     </>

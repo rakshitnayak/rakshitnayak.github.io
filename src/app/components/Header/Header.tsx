@@ -9,12 +9,11 @@ type HeaderProps = {
 };
 
 function Header({ socials }: HeaderProps) {
-
   const mapIcons = {
     github: <FaGithub />,
     linkedIn: <FaLinkedin />,
     mail: <FaEnvelope />,
-  }
+  };
 
   return (
     <div className="flex justify-between mt-8">
@@ -27,18 +26,18 @@ function Header({ socials }: HeaderProps) {
         </a>
       </div>
       <nav className="flex gap-4 items-center">
-        {socials?.map((social) => (
-          <Link href={social.link} key={social.name}>
-            <Icon fontSize="20px">{mapIcons[social.name as keyof typeof mapIcons]}</Icon>
-          </Link>
-        ))}
+        {socials.length > 0 && (
+          socials.map((social) => (
+            <Link href={social.link} key={social.name}>
+              <Icon fontSize="20px">
+                {mapIcons[social.name as keyof typeof mapIcons]}
+              </Icon>
+            </Link>
+          ))
+        )}
       </nav>
     </div>
   );
 }
-
-Header.defaultProps = {
-  socials: [],
-};
 
 export default Header;
