@@ -5,7 +5,6 @@ import defaultLabels from "./fallback/labels";
 import defaultConfigs from "./fallback/configs";
 import { fetcher } from "./utils/fetcher";
 
-
 export default async function Home() {
   let labels = defaultLabels;
   let configs = defaultConfigs;
@@ -24,9 +23,9 @@ export default async function Home() {
 
   return (
     <>
-      <Header configs={configs}/>
+      <Header configs={configs} />
       <Introduction labels={labels} configs={configs} />
-      <About configs={configs}/>
+      <About configs={configs} />
     </>
   );
 }
