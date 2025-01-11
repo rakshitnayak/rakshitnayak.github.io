@@ -1,37 +1,37 @@
 import React from "react";
 import { Icon } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import Link from "../Link/Link";
+import { Social } from "@/types";
 
-function Header() {
+type HeaderProps = {
+  socials: Social[];
+};
+
+function Header({ socials }: HeaderProps) {
+
+  const mapIcons = {
+    github: <FaGithub />,
+    linkedIn: <FaLinkedin />,
+    mail: <FaEnvelope />,
+  }
+
   return (
     <div className="flex justify-between mt-8">
       <div>
-        <a href="/" className="font-semibold no-underline hover:underline">Rakshit Nayak</a>
+        <a
+          href="/"
+          className="font-semibold hover:underline hover:underline-offset-4"
+        >
+          Rakshit Nayak
+        </a>
       </div>
       <nav className="flex gap-4 items-center">
-        <a
-          href="https://github.com/rakshitnayak"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon fontSize="20px">
-            <FaGithub />
-          </Icon>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/raksh1tnayak/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon fontSize="20px">
-            <FaLinkedin />
-          </Icon>
-        </a>
-        <a href="mailto:rakshitnayak13@gmail.com">
-          <Icon fontSize="20px">
-            <FaEnvelope />
-          </Icon>
-        </a>
+        {socials.map((social) => (
+          <Link href={social.link} key={social.name}>
+            <Icon fontSize="20px">{mapIcons[social.name as keyof typeof mapIcons]}</Icon>
+          </Link>
+        ))}
       </nav>
     </div>
   );

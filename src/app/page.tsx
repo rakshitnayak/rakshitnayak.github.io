@@ -1,5 +1,6 @@
 import Introduction from "./components/Introduction/Introduction";
 import Header from "./components/Header/Header";
+import About from "./components/About/About";
 import defaultLabels from "./fallback/labels";
 import defaultConfigs from "./fallback/configs";
 import { fetcher } from "./utils/fetcher";
@@ -22,8 +23,9 @@ export default async function Home() {
 
   return (
     <>
-      <Header />
+      <Header socials={configs.socials}/>
       <Introduction labels={labels} configs={configs} />
+      <About configs={configs}/>
     </>
   );
 }

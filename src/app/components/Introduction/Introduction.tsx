@@ -29,10 +29,9 @@ function Introduction({ labels, configs }: IntroductionProps) {
             <span className="animated-item">Cricket aficionado</span>
           </div>
         </h1>
-        <p className="text-[18px] dark:text-white text-stone-500 font-light mt-12 md:mt-5">
+        <p className="dark:text-white mt-12 md:mt-5">
           {labels.description}
         </p>
-        <Button link={configs.resumeLink} />
       </div>
       <div className="max-md:mt-20">
         <Image
