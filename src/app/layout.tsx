@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
+import { Provider } from "@/app/components/ui/provider"
 
 import "./globals.css";
-// import Header from "./components/Header/Header";
 
 export const metadata: Metadata = {
   title: "Rakshit's",
@@ -20,12 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
+        <Provider>
         <div className="max-w-[768px] md:m-auto m-[16px]">
-          {/* <Header /> */}
           {children}
         </div>
+        </Provider>
       </body>
     </html>
   );

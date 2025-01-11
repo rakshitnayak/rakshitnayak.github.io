@@ -1,4 +1,5 @@
 import Introduction from "./components/Introduction/Introduction";
+import Header from "./components/Header/Header";
 import defaultLabels from "./fallback/labels";
 import defaultConfigs from "./fallback/configs";
 import { fetcher } from "./utils/fetcher";
@@ -19,5 +20,10 @@ export default async function Home() {
     console.error("Failed to fetch data:", err);
   }
 
-  return <Introduction labels={labels} configs={configs} />;
+  return (
+    <>
+      <Header />
+      <Introduction labels={labels} configs={configs} />
+    </>
+  );
 }
