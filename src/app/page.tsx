@@ -6,7 +6,7 @@ import defaultLabels from "./fallback/labels";
 import defaultConfigs from "./fallback/configs";
 import { fetcher } from "./utils/fetcher";
 
-export const revalidate = 10
+export const revalidate = 0
   
 export default async function Home() {
   let labels = defaultLabels;
@@ -15,12 +15,8 @@ export default async function Home() {
 
   try {
     const [fetchedLabels, fetchedConfigs] = await Promise.all([
-      fetcher(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/labels`, {
-        next: { revalidate: 10 },
-      }),
-      fetcher(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/configs`, {
-        next: { revalidate: 10 },
-      }),
+      fetcher(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/labels`),
+      fetcher(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/configs`),
     ]);
 
     labels = fetchedLabels.success ? fetchedLabels.data[0] : defaultLabels;
