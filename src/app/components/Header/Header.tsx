@@ -21,13 +21,13 @@ function Header({ configs }: HeaderProps) {
   };
 
   return (
-    <div className="flex justify-between mt-8">
+    <div className="flex justify-between mt-8 xl:mx-auto md:m-[32px] m-[16px]">
       <div>
         <a
           href="/"
           className="font-semibold hover:underline hover:underline-offset-4"
         >
-          Rakshit Nayak
+          @rakshitnayak
         </a>
       </div>
       <nav className="flex gap-4 items-center">

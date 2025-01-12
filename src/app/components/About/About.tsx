@@ -12,11 +12,11 @@ type AboutProps = {
 
 const AboutList = ({ configs }: AboutProps) => {
   const linkStyles =
-    "text-[#0056B3] hover:text-[#111] underline underline-offset-2";
+    "text-[#6e57e0] font-semibold hover:text-[#111] underline underline-offset-2";
 
   return (
-    <>
-      <Text textStyle="2xl" mb="4">
+    <div className="xl:mx-auto md:m-[32px] m-[16px]">
+      <Text textStyle="2xl" mb="2" className="font-bold">
         About
       </Text>
       <List.Root gap="2" variant="plain" align="center">
@@ -40,7 +40,7 @@ const AboutList = ({ configs }: AboutProps) => {
             </List.Item>
           ))}
       </List.Root>
-    </>
+    </div>
   );
 };
 
