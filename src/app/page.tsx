@@ -4,27 +4,39 @@ import About from "./components/About/About";
 import BlogsList from "./components/Blogs/Blogs";
 import defaultLabels from "./fallback/labels";
 import defaultConfigs from "./fallback/configs";
-import { fetcher } from "./utils/fetcher";
 
-  
-export const dynamic = 'force-dynamic';
+
+async function getLabels() {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/labels`,
+    { next: { revalidate: 10 } }
+  );
+  const data = await res.json();
+
+  if (data.success) {
+    return data.data[0];
+  }
+
+  return defaultLabels;
+}
+
+async function getConfigs() {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/configs`,
+    { next: { revalidate: 10 } }
+  );
+  const data = await res.json();
+
+  if (data.success) {
+    return data.data[0];
+  }
+
+  return defaultConfigs;
+}
 
 export default async function Home() {
-  let labels = defaultLabels;
-  let configs = defaultConfigs;
-
-
-  try {
-    const [fetchedLabels, fetchedConfigs] = await Promise.all([
-      fetcher(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/labels`, { cache: 'no-store' }),
-      fetcher(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/configs`,  { cache: 'no-store' }),
-    ]);
-
-    labels = fetchedLabels.success ? fetchedLabels.data[0] : defaultLabels;
-    configs = fetchedConfigs.success ? fetchedConfigs.data[0] : defaultConfigs;
-  } catch (err) {
-    console.error("Failed to fetch data:", err);
-  }
+  const labels = await getLabels();
+  const configs = await getConfigs();
 
   return (
     <>
