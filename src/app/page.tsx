@@ -7,6 +7,8 @@ import defaultConfigs from "./fallback/configs";
 import { fetcher } from "./utils/fetcher";
 
   
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   let labels = defaultLabels;
   let configs = defaultConfigs;
