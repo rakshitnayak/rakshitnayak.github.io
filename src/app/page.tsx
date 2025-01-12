@@ -11,8 +11,12 @@ export default async function Home() {
 
   try {
     const [fetchedLabels, fetchedConfigs] = await Promise.all([
-      fetcher(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/labels`),
-      fetcher(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/configs`),
+      fetcher(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/labels`, {
+        cache: "no-store",
+      }),
+      fetcher(`${process.env.NEXT_PUBLIC_BASE_API_URL}/api/configs`, {
+        cache: "no-store",
+      }),
     ]);
 
     labels = fetchedLabels.success ? fetchedLabels.data[0] : defaultLabels;
