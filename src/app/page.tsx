@@ -1,5 +1,4 @@
 import Introduction from "./components/Introduction/Introduction";
-import Header from "./components/Header/Header";
 import About from "./components/About/About";
 import BlogsList from "./components/Blogs/Blogs";
 import { fetchLabels } from "./actions/fetchLabels";
@@ -11,7 +10,6 @@ export default async function Home() {
 
   return (
     <>
-      <Header configs={configs} />
       <Introduction labels={labels} configs={configs} />
       <About configs={configs} />
       <BlogsList />
