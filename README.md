@@ -1,4 +1,5 @@
-# Simple personal portfolio!
+# Simple personal portfolio! 
+### This is a whitelabel portfolio, please feel free to use this template
 
 ## One-time setup
 
