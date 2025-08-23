@@ -5,6 +5,11 @@
 @tailwind utilities;
 
 
+:root {
+  --background: #fff;
+  --foreground: #000;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
