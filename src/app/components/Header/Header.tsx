@@ -21,7 +21,7 @@ function Header({ configs }: HeaderProps) {
   };
 
   return (
-    <div className="flex justify-between mt-8 xl:mx-auto md:m-[32px] m-[16px]">
+    <div className="flex justify-between xl:mx-auto md:p-[32px] p-[16px]">
       <div>
         <a
           href="/"

@@ -26,7 +26,7 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <Provider>
-        <div className="max-w-[768px] md:m-auto m-[16px]">
+        <div className="max-w-[768px] md:m-auto">
           <Header configs={configs} />
           {children}
         </div>

@@ -19,7 +19,7 @@ type IntroductionProps = {
 
 function Introduction({ labels }: IntroductionProps) {
   return (
-    <div className="md:flex md:justify-center md:items-center md:mt-[80px] xl:mx-auto md:m-[32px] m-[16px] gap-10">
+    <div className="md:flex md:justify-center md:items-center md:mt-[80px] xl:mx-auto md:p-[32px] p-[16px] gap-10">
       <div className="md:w-[80%]">
         <h1 className="md:text-[2.8em] font-bold text-[1.8em] animated animated-text">
           <span className="mr-2">Hey folks, I'm</span>
@@ -29,7 +29,7 @@ function Introduction({ labels }: IntroductionProps) {
             <span className="animated-item">Cricket aficionado</span>
           </div>
         </h1>
-        <p className="dark:text-white mt-12 md:mt-5">
+        <p className="text-black mt-12 md:mt-5">
           {labels.description}
         </p>
       </div>

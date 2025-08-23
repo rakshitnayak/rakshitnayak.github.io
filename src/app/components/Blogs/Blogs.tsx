@@ -21,7 +21,7 @@ const BlogsList = () => {
   `;
 
   return (
-    <div className="xl:mx-auto md:m-[32px] m-[16px]">
+    <div className="xl:mx-auto md:p-[32px] p-[16px]">
       <Text textStyle="2xl" mb="2" className="font-bold">
         Blogs
       </Text>
