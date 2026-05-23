@@ -12,7 +12,7 @@ export default async function Home() {
     <>
       <Introduction labels={labels} configs={configs} />
       <About configs={configs} />
-      <BlogsList />
+      <BlogsList blogs={configs?.blogs} latestOnly />
     </>
   );
 }

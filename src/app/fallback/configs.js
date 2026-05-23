@@ -30,6 +30,30 @@ const defaultConfigs = {
       link: "https://drive.google.com/file/d/1ap93KLVanAyMbQDOG-KWBtjEiGCv9T75/view?usp=sharing",
     },
   ],
+  blogs: [
+    {
+      title:
+        "How to implement Server Side Rendering for Material UI's media queries in NextJs to avoid flash?",
+      link: "https://dev.to/rakshitnayak/how-to-implement-server-side-rendering-for-material-uis-media-queries-in-nextjs-to-avoid-flash-jpi",
+      publishedAt: "2023-08-22",
+      tags: ["Next.js", "Material UI", "SSR"],
+      readTime: 6,
+    },
+    {
+      title: "Understanding GCP in short",
+      link: "https://dev.to/rakshitnayak/what-is-google-cloud-platform-3oh4",
+      publishedAt: "2021-03-10",
+      tags: ["GCP", "Cloud"],
+      readTime: 4,
+    },
+    {
+      title: "DOM (Document object model) in less than 500 words",
+      link: "https://dev.to/rakshitnayak/dom-document-object-model-4dmp",
+      publishedAt: "2020-06-15",
+      tags: ["JavaScript", "Web Fundamentals"],
+      readTime: 3,
+    },
+  ],
 };
 
 export default defaultConfigs;

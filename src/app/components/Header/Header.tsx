@@ -31,6 +31,12 @@ function Header({ configs }: HeaderProps) {
         </a>
       </div>
       <nav className="flex gap-4 items-center">
+        <a
+          href="/blogs"
+          className="text-sm hover:underline hover:underline-offset-4"
+        >
+          blogs
+        </a>
         {configs.socials && configs.socials.length > 0 && (
           configs.socials.map((social) => (
             <Link href={social.link} key={social.name}>

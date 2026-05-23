@@ -1,4 +1,4 @@
-import { About, Social } from "@/types";
+import { About, Blog, Social } from "@/types";
 import mongoose, { Schema, Document } from "mongoose";
 
 export interface Labels extends Document {
@@ -9,6 +9,7 @@ export interface Configs extends Document {
   resumeLink: string;
   socials: Social[];
   about: About[];
+  blogs: Blog[];
 }
 
 const configSchema = new Schema<Configs>({
@@ -24,6 +25,15 @@ const configSchema = new Schema<Configs>({
       list: { type: String, required: true },
       linkWord: { type: String },
       link: { type: String },
+    },
+  ],
+  blogs: [
+    {
+      title: { type: String, required: true },
+      link: { type: String, required: true },
+      publishedAt: { type: String, required: true },
+      tags: [{ type: String }],
+      readTime: { type: Number },
     },
   ],
 });
