@@ -1,4 +1,5 @@
 import React from "react";
+import NextLink from "next/link";
 import { Icon } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import Link from "../Link/Link";
@@ -23,14 +24,20 @@ function Header({ configs }: HeaderProps) {
   return (
     <div className="flex justify-between xl:mx-auto md:p-[32px] p-[16px]">
       <div>
-        <a
+        <NextLink
           href="/"
           className="font-semibold hover:underline hover:underline-offset-4"
         >
           @rakshitnayak
-        </a>
+        </NextLink>
       </div>
       <nav className="flex gap-4 items-center">
+        <a
+          href="/career"
+          className="text-sm hover:underline hover:underline-offset-4"
+        >
+          career
+        </a>
         <a
           href="/blogs"
           className="text-sm hover:underline hover:underline-offset-4"
