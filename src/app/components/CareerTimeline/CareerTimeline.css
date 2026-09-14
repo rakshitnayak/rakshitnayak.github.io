@@ -1,0 +1,16 @@
+.career-print-source { display: none; }
+.career-page button:focus-visible, .career-page a:focus-visible {
+  outline: 2px solid #6e57e0;
+  outline-offset: 4px;
+}
+@media print {
+  @page { margin: 16mm; }
+  body { background: white; color: black; }
+  body:has(.career-page) nav, body:has(.career-page) header,
+  .career-controls { display: none !important; }
+  .career-page { padding: 0 !important; }
+  .career-role, .career-details, .career-print-source { display: block !important; }
+  .career-role { break-inside: avoid; }
+  .career-details { background: white !important; }
+  .career-print-source { margin-top: 20px; font-size: 10px; overflow-wrap: anywhere; }
+}

@@ -1,4 +1,7 @@
+import { careerRoles, careerSource } from "../../lib/career";
+
 const defaultConfigs = {
+  career: { source: careerSource, roles: careerRoles },
   resumeLink:
     "https://drive.google.com/file/d/1LdjgpKg_NECUraG2e56nPZGyjJXYXzwN/view?usp=sharing",
   socials: [
