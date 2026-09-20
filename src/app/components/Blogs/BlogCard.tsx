@@ -16,7 +16,7 @@ const BlogCard = ({ blog }: BlogCardProps) => {
   `;
 
   return (
-    <article className="border border-[#e8e8e8] rounded-xl p-4 sm:p-5 hover:border-black transition-colors duration-300">
+    <article className="rounded-xl border border-[#e8e8e8] p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#bbb] hover:shadow-[0_10px_28px_rgba(0,0,0,0.05)] sm:p-5">
       <Link href={blog.link} styles={linkStyles}>
         {blog.title}
       </Link>

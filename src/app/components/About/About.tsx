@@ -1,5 +1,3 @@
-import { List, Text } from "@chakra-ui/react";
-import { LuCircleCheck } from "react-icons/lu";
 import Link from "../Link/Link";
 import { About } from "@/types";
 
@@ -15,17 +13,16 @@ const AboutList = ({ configs }: AboutProps) => {
     "text-[#6e57e0] font-semibold hover:text-[#111] underline underline-offset-2";
 
   return (
-    <div className="xl:mx-auto md:p-[32px] p-[16px]">
-      <Text textStyle="2xl" mb="2" className="font-bold">
-        About
-      </Text>
-      <List.Root gap="2" variant="plain" align="center">
+    <section className="px-4 py-10 md:px-8 md:py-14">
+      <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-[#6e57e0]">About</p>
+      <h2 className="mb-6 max-w-lg text-2xl font-bold tracking-[-0.02em] md:text-3xl">
+        Product thinking, backed by engineering craft.
+      </h2>
+      <ul className="divide-y divide-[#ededed] border-y border-[#ededed]">
         {configs?.about &&
-          configs.about.map((list) => (
-            <List.Item className="text-sm sm:text-base" key={list.list}>
-              <List.Indicator asChild color="green.500">
-                <LuCircleCheck />
-              </List.Indicator>
+          configs.about.map((list, index) => (
+            <li className="flex gap-4 py-4 text-sm leading-6 sm:text-base" key={list.list}>
+              <span className="pt-0.5 text-xs font-bold text-[#aaa]">0{index + 1}</span>
               <span>
                 {list.list}
                 {list.linkWord && list.link && (
@@ -37,10 +34,10 @@ const AboutList = ({ configs }: AboutProps) => {
                   </>
                 )}
               </span>
-            </List.Item>
+            </li>
           ))}
-      </List.Root>
-    </div>
+      </ul>
+    </section>
   );
 };
 

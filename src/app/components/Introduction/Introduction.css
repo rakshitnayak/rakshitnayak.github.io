@@ -1,53 +1,7 @@
-.animated {
-  position: relative;
-}
-
-.animated-item {
-  color: #6e57e0;
-}
-
-.animated-item {
-  line-height: inherit;
-  display: block;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  animation: BottomTotop 6s linear infinite 0s;
-}
-.animated-item:nth-child(2n + 2) {
-  animation-delay: 2s;
-}
-.animated-item:nth-child(3n + 3) {
-  animation-delay: 4s;
-}
-
-@keyframes BottomTotop {
-  0% {
-    opacity: 0;
-  }
-  5% {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  10% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  25% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  30% {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+.home-hero { animation: hero-in 500ms ease-out both; }
+.hero-visual { position: relative; display: flex; justify-content: center; padding: 1rem 0 1.5rem; }
+.hero-image-shell { display: grid; place-items: center; width: min(100%, 250px); aspect-ratio: 1; border-radius: 2rem; background: #f5f2ff; overflow: hidden; }
+.hero-image-shell img { width: 88%; height: auto; }
+@keyframes hero-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 767px) { .hero-visual { max-width: 290px; margin: 0 auto; } }
+@media (prefers-reduced-motion: reduce) { .home-hero { animation: none; } }

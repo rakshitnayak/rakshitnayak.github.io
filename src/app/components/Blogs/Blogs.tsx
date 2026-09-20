@@ -1,4 +1,3 @@
-import { Text } from "@chakra-ui/react";
 import { Blog } from "@/types";
 import { sortBlogsByDate } from "@/lib/blogs";
 import BlogCard from "./BlogCard";
@@ -13,11 +12,11 @@ const BlogsList = ({ blogs = [], latestOnly = false }: BlogsListProps) => {
   const blogsToShow = latestOnly ? sortedBlogs.slice(0, 3) : sortedBlogs;
 
   return (
-    <div className="xl:mx-auto md:p-[32px] p-[16px]">
-      <div className="flex items-center gap-3 mb-2">
-        <Text textStyle="2xl" className="font-bold">
+    <section className="px-4 py-10 md:px-8 md:py-14">
+      <div className="mb-2 flex items-end justify-between gap-3">
+        <h2 className="text-2xl font-bold tracking-[-0.02em] md:text-3xl">
           {latestOnly ? "Latest Blogs" : "Blogs"}
-        </Text>
+        </h2>
         {latestOnly && (
           <span className="inline-block text-xs uppercase tracking-[0.12em] bg-black text-white px-2 py-1 rounded-full">
             fresh drops
@@ -25,9 +24,9 @@ const BlogsList = ({ blogs = [], latestOnly = false }: BlogsListProps) => {
         )}
       </div>
       {latestOnly && (
-        <Text mb="5" className="text-sm sm:text-base text-[#666]">
+        <p className="mb-6 text-sm text-[#666] sm:text-base">
           New writing from my learning and engineering journey.
-        </Text>
+        </p>
       )}
       <div className="flex flex-col gap-4">
         {blogsToShow.map((item) => (
@@ -42,7 +41,7 @@ const BlogsList = ({ blogs = [], latestOnly = false }: BlogsListProps) => {
           View all blogs →
         </a>
       )}
-    </div>
+    </section>
   );
 };
 

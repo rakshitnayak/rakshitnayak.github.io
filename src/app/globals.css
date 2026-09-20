@@ -14,4 +14,10 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: "Maven Pro", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  color: #231b4f;
+  background: #ddd6ff;
 }

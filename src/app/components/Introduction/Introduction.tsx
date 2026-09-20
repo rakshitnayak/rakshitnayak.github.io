@@ -1,49 +1,47 @@
-import React from "react";
 import Image from "next/image";
+import NextLink from "next/link";
 
 import developerImage from "../../assets/svgs/undraw_Developer_activity_re_39tg.svg";
 import "./Introduction.css";
-import Button from "../Button/Button";
-
-type Labels = {
-  description: string;
-};
-type Configs = {
-  resumeLink: string;
-};
 
 type IntroductionProps = {
-  labels: Labels;
-  configs: Configs;
+  labels: { description: string };
+  configs: { resumeLink?: string };
 };
 
-function Introduction({ labels }: IntroductionProps) {
+export default function Introduction({ labels, configs }: IntroductionProps) {
   return (
-    <div className="md:flex md:justify-center md:items-center md:mt-[80px] xl:mx-auto md:p-[32px] p-[16px] gap-10">
-      <div className="md:w-[80%]">
-        <h1 className="md:text-[2.8em] font-bold text-[1.8em] animated animated-text">
-          <span className="mr-2">Hey folks, I'm</span>
-          <div className="animated-info min-w-fit flex relative md:inline-block md:align-top  md:min-w-[400px]">
-            <span className="animated-item">Rakshit</span>
-            <span className="animated-item">Software Engineer</span>
-            <span className="animated-item">Cricket aficionado</span>
+    <section className="home-hero px-4 pb-10 pt-12 md:px-8 md:pb-14 md:pt-20">
+      <div className="grid items-center gap-10 md:grid-cols-[1.4fr_0.6fr]">
+        <div>
+          <p className="mb-5 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#666]">
+            <span className="h-2 w-2 rounded-full bg-[#3a9d8f]" aria-hidden="true" />
+            Software engineer · Bengaluru
+          </p>
+          <h1 className="max-w-[620px] text-[2.55rem] font-bold leading-[1.08] tracking-[-0.04em] sm:text-5xl md:text-[3.6rem]">
+            I build reliable products for the web<span className="text-[#6e57e0]">.</span>
+          </h1>
+          <p className="mt-6 max-w-[570px] text-base leading-7 text-[#555] md:text-lg md:leading-8">
+            {labels.description}
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <NextLink href="/career" className="rounded-full bg-black px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6e57e0]">
+              Explore my career <span aria-hidden="true">→</span>
+            </NextLink>
+            {configs.resumeLink && (
+              <a href={configs.resumeLink} target="_blank" rel="noopener noreferrer" className="rounded-full border border-[#ddd] px-5 py-2.5 text-sm font-semibold transition-colors hover:border-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6e57e0]">
+                View résumé <span aria-hidden="true">↗</span>
+              </a>
+            )}
           </div>
-        </h1>
-        <p className="text-black mt-12 md:mt-5">
-          {labels.description}
-        </p>
+        </div>
+
+        <div className="hero-visual" aria-hidden="true">
+          <div className="hero-image-shell">
+            <Image src={developerImage} width={280} height={280} alt="" priority />
+          </div>
+        </div>
       </div>
-      <div className="max-md:mt-20">
-        <Image
-          src={developerImage}
-          width={400}
-          height={400}
-          alt="rakshit-coding"
-          priority
-        />
-      </div>
-    </div>
+    </section>
   );
 }
-
-export default Introduction;
